@@ -1,0 +1,6 @@
+﻿gens,cap,hr,capital_cost,type
+CT_small,105,9124,1175,Combustion_Turbine
+CT_big,237,9905,713,Combustion_Turbine
+CC_small,418,6431,1084,Combined_Cycle
+CC_big,1083,6370,958,Combined_Cycle
+Nuclear,2156,10608,6041,Nuclear

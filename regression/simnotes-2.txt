@@ -1,0 +1,32 @@
+Jan 22, 2022:
+
+Attached is a numpy array of conditional-on-extreme simulations. It has dimension (535, 4, 12, 210) corresponding to 
+-535  counties in Illinois, Indiana, Iowa, Michigan,  Minnesota, and Wisconsin
+-four dates: 15th of Jan, Feb, July, August
+-12 hours of the day.  The 12 hours from the simulations correspond to the 0, 2, ..., 22 hours from (1:8760); i.e. index 1 of 12 corresponds to the data for which (1:8760) modulo 24 equals 0; index 2 of 12 corresponds to the data for which (1:8760) modulo 24 equals 2; etc.
+-210 simulations
+
+Also attached the 535 lon/lat coordinates.
+The layout of the four  dates / hours of day is the same as  before, still in UTC.
+
+What has changed is the  definition of conditional extreme.  Fixing county/date/hour, there are 210 conditional extreme simulations, which breaks down into 30 for each "state average".  I counted the upper peninsula as its  own state here. For these 210 scenarios,  the seven states are ordered alphabetically as above but with UP last. So first 30 are for IL,  second 30 are for IN, ... , last 30 are for UP. Again, the definition of conditional extreme was: average temperature of (state) is above (below) the 0.999 (0.001) quantile of the average temperature of (state). So this is more extreme than the previous 0.99/0.01  quantiles.
+
+I just focused on getting you the spatial part, but you might be interested in the "independent" version again. Also I wasn't sure if you had the actual "non-extreme" data for these 535 counties. Let me know if you have  any questions.
+
+Feb 18, 2022:
+
+Setup is same as above. Now  each combination has 2100 simulations instead of 210. In total, there are 4*12*2100 = 100,800 extreme spatial fields simulated. Crazy hot boiling (and very cold) temperatures were corrected with ad hoc method where shape parameter fixed by state. 
+Still using 0.999/0.001 quantiles, so the most extreme simulations are noticeably hotter/colder than the historical  record. They might still be too extreme, but it does not have the crazy behavior from before where  e.g. a single county would be over 100 Celsius and the rest would be much lower.
+
+April 6, 2022:
+
+Five .npy files added. Four for conditional on extreme and then one historical simulation. All use same parameters as the Feb 18 fix.
+
+1 Spatial – 99.9% (extreme_simulations_sixstate_spatial_p999.npy)
+2 Spatial – 99% (extreme_simulations_sixstate_spatial_p99.npy)
+3 Independent – 99.9% (extreme_simulations_sixstate_ind_p999.npy)
+4 Independent – 99% (extreme_simulations_sixstate_ind_p99.npy)
+5 Unconditional spatial samples (spatial_simulations_23years.npy)
+
+The first four are in the same format as before, size (535, 4, 12, 210), described in Jan 22 note. 
+The final "historical" simulation has dimension (535, 365, 12, 23) for (location, day of year, hour of day which is same format as the others, 23 years of simulation). So for each location there are 365*12*23 = 100,740 simulated values.

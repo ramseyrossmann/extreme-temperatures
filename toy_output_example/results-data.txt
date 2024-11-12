@@ -1,0 +1,6 @@
+normal,100,0
+normal,100,1
+normal,100,2
+extreme,100,0
+extreme,100,1
+extreme,100,2

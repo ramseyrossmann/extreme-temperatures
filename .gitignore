@@ -1,0 +1,10 @@
+
+*/.DS_Store
+.DS_Store
+pickles/gams-data-midwest.pkl
+*/extreme_simulations_fullaverageextreme_ind_p99.npy
+*/extreme_simulations_fullaverageextreme_spatial_p99.npy
+*/ind_simulations_70years.npy
+*/sixstate_historical_data.npy
+*/spatial_simulations_70years_100k.npy
+*/spatial_simulations_70years_205k.npy
